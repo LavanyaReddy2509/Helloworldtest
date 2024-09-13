@@ -10,7 +10,7 @@ on:
         description: 'this variable is for input'
         type: string
         required: true
-        default: false
+        default: 'hello'
       check:
         description: 'this variable is for input'
         type: boolean
@@ -27,7 +27,7 @@ jobs:
         
   control-job:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.check == true }}
+    if: ${{inputs.check == true }}
     steps:
       - name: Run a one-line script
-        run: echo "value from the user ${{ github.event.inputs.check }}"
+        run: echo "value from the user2"
